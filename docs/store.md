@@ -14,4 +14,4 @@ Memory: one `List[UInt8]` (log), two `List[UInt32]` (idx, folds). `get` and `sum
 - Opening drops a torn tail: idx or fold records that point past the log, or a partial record, are cut and the file rewritten.
 - `search(q)` is a byte scan of the whole log; hits inside summaries or across a message boundary do not count.
 - Limits: log.bin under 4 GiB (u32 offsets, raises past it); empty messages are rejected.
-- Check: `tests/gate-s1.sh`. Numbers: see `exchange/lane-s1-report.md`.
+- Check: `tests/gate-s1.sh`. The gate prints the measured numbers.
