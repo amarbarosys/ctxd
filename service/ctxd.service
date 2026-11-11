@@ -1,0 +1,16 @@
+[Unit]
+Description=ctxd context-folding proxy (127.0.0.1)
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/opt/ctxd/ctxd
+WorkingDirectory=%h/.config/ctxd
+Environment=LD_LIBRARY_PATH=%h/.local/opt/ctxd/lib
+EnvironmentFile=-%h/.config/ctxd/env
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=default.target

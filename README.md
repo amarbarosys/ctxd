@@ -12,6 +12,10 @@ and the API, folds old context into summaries, and keeps a local store. It liste
 Config keys: see the header of `src/ctxd/main.mojo`. Without `[summarizer] url`, ctxd is a plain
 passthrough.
 
+Or as a systemd user service: `service/install.sh` builds ctxd into `~/.local/opt/ctxd` and
+enables `ctxd.service`. Config goes in `~/.config/ctxd/ctxd.toml`, the summarizer key in
+`~/.config/ctxd/env` (mode 600).
+
 ## Build and test
 
 Needs Mojo and a [mojo-bento](https://github.com/amarbaro/mojo-bento) checkout next to this repo,
